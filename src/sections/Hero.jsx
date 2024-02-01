@@ -1,8 +1,10 @@
+import { useState } from "react";
 import Button from "../components/Button";
 import { arrowRight } from "../assets/icons";
 import { statistics, shoes } from "../constants";
 import { bigShoe1 } from "../assets/images";
-import { useState } from "react";
+import StatisticWrapper from "../components/StatisticWrapper";
+import ShoeCard from "../components/ShoeCard";
 
 const Hero = () => {
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
@@ -12,7 +14,7 @@ const Hero = () => {
       id="home"
       className="w-[100dvw] min-h-[100dvh] max-container flex xl:flex-row flex-col justify-center gap-10"
     >
-      <div className="relative flex flex-col justify-center items-start xl:w-2/5 w-full padding-x pt-28">
+      <div className="relative flex flex-col justify-center items-start xl:w-2/5 w-full pt-28 max-xl:padding-x">
         <p className="text-xl font-montserrat capitalize text-coral-red">
           our summer collection
         </p>
@@ -68,40 +70,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-const StatisticWrapper = ({ value, label }) => {
-  return (
-    <div>
-      <p className="text-4xl font-palanquin font-bold">{value}</p>
-      <p className="leading-7 font-montserrat text-slate-gray">{label}</p>
-    </div>
-  );
-};
-
-const ShoeCard = ({ imgURL, changeBigShoeImage, bigShoeImg }) => {
-  const handleClick = () => {
-    if (bigShoeImg !== imgURL.bigShoe) {
-      changeBigShoeImage(imgURL.bigShoe);
-    }
-  };
-  return (
-    <div
-      className={`border-2 rounded-xl ${
-        bigShoeImg === imgURL.bigShoe
-          ? "border-coral-red"
-          : "border-transparent"
-      } cursor-pointer max-sm:flex-1`}
-      onClick={handleClick}
-    >
-      <div className="flex justify-center items-center bg-card bg-center bg-cover sm:w-40 sm:h-40 rounded-xl max-sm:p-4">
-        <img
-          src={imgURL.thumbnail}
-          alt="shoe colletion"
-          width={127}
-          height={103.34}
-          className="object-contain"
-        />
-      </div>
-    </div>
-  );
-};
