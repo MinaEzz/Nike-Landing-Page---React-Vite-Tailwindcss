@@ -2,6 +2,7 @@ import { headerLogo } from "../assets/images";
 import { hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
 import { useState } from "react";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,8 +29,9 @@ const Navbar = () => {
       </nav>
       <ul
         className={`${
-          isOpen ? "" : "hidden"
-        } lg:hidden py-4 mt-2 text-center space-y-2 bg-neutral-50`}
+          isOpen ? "opacity-100" : "opacity-0"
+        } lg:hidden py-4 mt-2 text-center space-y-2 transition duration-500 ease-in-out `}
+        style={{ backgroundColor: "rgba(255, 255, 255, 0.8)" }}
       >
         {navLinks.map((link) => {
           return (
@@ -42,16 +44,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-const NavLink = ({ path, label }) => {
-  return (
-    <li>
-      <a
-        href={path}
-        className=" font-montserrat leading-normal text-slate-gray capitalize"
-      >
-        {label}
-      </a>
-    </li>
-  );
-};
