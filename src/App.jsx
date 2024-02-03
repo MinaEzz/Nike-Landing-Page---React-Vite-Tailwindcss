@@ -6,13 +6,13 @@ import {
   SpecialOffer,
   CustomerReviews,
   Subscribe,
-  Footer,
 } from "./sections";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <main className="relative">
+    <main className="relative overflow-x-hidden">
       <Navbar />
       {/* ./ navbar */}
       <section className=" xl:padding-l wide:padding-r padding-b">
@@ -35,7 +35,7 @@ const App = () => {
         <SpecialOffer />
       </section>
       {/* ./ special-offer */}
-      <section className="padding bg-pale-blue ">
+      <section className="padding bg-pale-blue">
         <CustomerReviews />
       </section>
       {/* ./ customers */}

@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="flex lg:flex-row flex-col items-center justify-between gap-10"
+      className="flex lg:flex-row flex-col items-center justify-between gap-10 flex-shrink"
     >
       {services.map((service) => {
         return <ServiceCard key={service.label} {...service} />;

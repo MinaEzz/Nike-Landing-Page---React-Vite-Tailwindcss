@@ -3,7 +3,7 @@ const NavLink = ({ path, label }) => {
     <li>
       <a
         href={path}
-        className=" font-montserrat leading-normal text-slate-gray capitalize"
+        className="font-montserrat leading-normal text-slate-gray capitalize"
       >
         {label}
       </a>

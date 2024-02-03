@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="padding-x py-8  fixed w-[100dvw] z-20 ">
+    <header className="padding-x py-8  fixed w-[100dvw] z-20">
       <nav className="flex justify-between items-center max-container ">
         <a href="/">
           <img src={headerLogo} alt="Logo" width={130} height={29} />
@@ -30,7 +30,7 @@ const Navbar = () => {
       <ul
         className={`${
           isOpen ? "opacity-100" : "opacity-0"
-        } lg:hidden py-4 mt-2 text-center space-y-2 transition duration-500 ease-in-out `}
+        } lg:hidden block py-4 mt-2 text-center space-y-2 transition duration-500 ease-in-out rounded-xl`}
         style={{ backgroundColor: "rgba(255, 255, 255, 0.8)" }}
       >
         {navLinks.map((link) => {
